@@ -1,0 +1,27 @@
+key: mp-bs-quote-fancy
+name: Fancy Bootstrap Quote
+category: Bootstrap
+instructions: |
+  Create a fancy quote and attribution (author).
+template: >
+  <!-- Start of Quote-Fancy -->
+  <blockquote class="blockquote clearfix card m-4 p-4 shadow rounded border-info col-10 mx-auto" style="margin-top: 2.5em !important">
+      <div class="text-info" style="margin-top: -3.3em"><span class="fa-stack fa-2x"><i class="fa fa-circle fa-stack-2x"></i> <i class="fa fa-quote-left fa-stack-1x fa-inverse"></i></span></div>
+      <div class="lead gb-bs-header">{{quote}}
+        <div class="blockquote-footer small text-muted text-right gb-bs-content">{{author}}</div>
+      </div>
+  </blockquote>
+  <!-- End of Quote-Fancy -->
+insertquery: div.lead
+selectors: blockquote.blockquote
+unwrap: "*"
+parameters: 
+  - name: quote
+    value: Quote
+    title: Enter the quote
+    type: textarea
+  - name: author
+    value: Author
+    title: Author of the quote
+author: Greg Bird <greg.bird.oz@gmail.com>
+version: 1.0.0

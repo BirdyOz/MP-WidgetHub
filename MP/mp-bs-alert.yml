@@ -1,0 +1,33 @@
+key: mp-bs-alert
+name: MP Alerts
+category: bootstrap
+template: |
+  <div class="m-2 alert alert-{{severity}}" role="alert">
+    <div class="alert-content">
+      {{text}}
+    </div>
+  </div>
+selectors: div[role="alert"].alert
+insertquery: div[role="alert"].alert .alert-content
+unwrap: '*'
+parameters:
+  - name: severity
+    title: Type of alert
+    bind: classRegex('alert-(.*)')
+    value: success
+    options:
+      - success
+      - warning
+      - danger
+      - primary
+      - secondary
+      - info
+      - light
+      - dark
+  - name: text
+    value: Alert text goes here
+    title: Enter the text you would like to appear in the alert
+    type: textarea
+autocomplete: severity
+author: Greg Bird <greg.bird.oz@gmail.com>
+version: 1.0.0

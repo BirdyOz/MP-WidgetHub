@@ -1,0 +1,25 @@
+key: mp-bs-quote
+name: Quote
+instructions: |
+  Create a quote and attribution (author).
+template: >
+  <!-- Start of Quote -->
+  <blockquote class="blockquote m-4 border-light border-light"><i aria-hidden="true" class="fa fa-fw fa-quote-left fa-2x text fa-pull-left" style="color :lightgrey;"></i>
+      <div class="lead">{quote}</div>
+      <i aria-hidden="true" class="fa fa-fw fa-quote-right fa-2x text fa-pull-right m-0" style="color:lightgrey;"></i>
+      <div class="blockquote-footer small text-muted mt-4 gb-bs-content">{author}</div>
+  </blockquote>
+  <!-- End of Quote -->
+insertquery: div.lead
+selectors: blockquote.blockquote
+unwrap: "*"
+parameters: 
+  - name: quote
+    value: Quote
+    title: Enter the quote
+    type: textarea
+  - name: author
+    value: Author
+    title: Author of the quote
+author: Greg Bird <greg.bird.oz@gmail.com>
+version: 1.0.0
