@@ -1,0 +1,25 @@
+key: mp-box-learning-activity
+name: Learning Activity Box
+category: _MP-Boxes
+instructions: >
+  Add the details of your Learning Activity
+template: |
+  <!-- Start of Box-Activity -->
+  <div class="clearfix container-fluid"></div>
+  <div class="card mt-1 mb-1 clearfix w-100">
+      <div class="card-body">
+          <h4 class="card-title text-danger"><i aria-hidden="true" class="fa fa-tasks"></i> Learning Activity - {{title}}</h4>
+          <p>{{description}}</p>
+      </div>
+  </div>
+  <!-- End of Box-Activity -->
+parameters:
+  - name: title
+    value: Title goes here
+    title: Enter a title for this activity
+  - name: description
+    value: Description goes here
+    title: Enter a brief description of the activity
+    type: textarea
+author: Greg Bird <greg.bird.oz@gmail.com>
+version: 1.0.0

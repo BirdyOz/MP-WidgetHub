@@ -32,5 +32,6 @@ parameters:
     value: Description goes here
     title: Enter a brief description of the task
     type: textarea
+scope: ^page-mod-assign-
 author: Greg Bird <greg.bird.oz@gmail.com>
 version: 1.0.0
