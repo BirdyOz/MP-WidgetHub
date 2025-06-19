@@ -1,6 +1,6 @@
 key: mp-snippet-forum-description
 name: Forum Description - Each person posts one discussion
-category: _MP-Snippets
+category: Snippets
 instructions: >
   Add a description of your forum
 template: |
@@ -14,10 +14,10 @@ template: |
   <!-- Forum Description - Each person posts one discussion -->
 parameters:
   - name: prerequisite
-    value: Prerequisite goes here
+    value: '[Prerequisite goes here]'
     title: Enter any prerequisites
   - name: description
-    value: Description goes here
+    value: '[Description goes here]'
     title: Enter a brief description of the forum task
     type: textarea
 author: Greg Bird <greg.bird.oz@gmail.com>

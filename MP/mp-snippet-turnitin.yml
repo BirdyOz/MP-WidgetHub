@@ -1,6 +1,6 @@
 key: mp-snippet-turnitin
 name: Turnitin Activity Instructions
-category: _MP-Snippets
+category: Snippets
 instructions: >
   Add Turnitin submission instructions to your assignments
 template: |
@@ -29,7 +29,7 @@ template: |
   <!-- End of Turnitin Assignment Activity Instructions -->
 parameters:
   - name: description
-    value: Description goes here
+    value: '[Description goes here]'
     title: Enter a brief description of the task
     type: textarea
 scope: ^page-mod-assign-

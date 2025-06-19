@@ -1,6 +1,6 @@
 key: mp-bs-alert
 name: MP Alerts
-category: bootstrap
+category: UI
 template: |
   <div class="m-2 alert alert-{{severity}}" role="alert">
     <div class="alert-content">
@@ -25,7 +25,7 @@ parameters:
       - light
       - dark
   - name: text
-    value: Alert text goes here
+    value: '[Alert text goes here]'
     title: Enter the text you would like to appear in the alert
     type: textarea
 autocomplete: severity

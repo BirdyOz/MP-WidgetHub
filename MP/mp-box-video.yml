@@ -1,13 +1,13 @@
 key: mp-box-video
 name: Video Box
-category: _MP-Boxes
+category: UI
 instructions: >
   Add the details of your video
 template: |
   <!-- Start of Video box -->
   <div class="card mt-1 mb-1 clearfix w-100">
       <div class="card-body">
-          <h4 class="text-danger"><i aria-hidden="true" class="fa fa-play-circle-o"></i> {{title}} ({{#if}}[hours<0]0{{/if}}{{hours}}:({{#if}}[minutes<0]0{{/if}}{{minutes}})</h4>
+          <h4 class="text-danger"><i aria-hidden="true" class="fa fa-play-circle-o"></i> {{title}} ({{#if}}[hours<10]0{{/if}}{{hours}}:{{#if}}[minutes<10]0{{/if}}{{minutes}})</h4>
           <p>{{description}}</p>
           {{{embed}}}
       </div>
@@ -15,10 +15,10 @@ template: |
   <!-- End of Video box -->
 parameters:
   - name: title
-    value: Title goes here
+    value: '[Title goes here]'
     title: Video title
   - name: description
-    value: Description goes here
+    value: '[Description goes here]'
     title: Enter a brief description of the video
     type: textarea
   - name: hours
@@ -31,7 +31,7 @@ parameters:
     min: 0
     max: 59
   - name: embed
-    value: Video embed code goes here
-    title: Add the video embed code here
+    value: '[Video link or embed code goes here]'
+    title: Add the video link or embed code here
 author: Greg Bird <greg.bird.oz@gmail.com>
 version: 1.0.0

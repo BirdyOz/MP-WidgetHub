@@ -1,8 +1,8 @@
 key: mp-snippet-assign-submit
 name: Assignment Submission Instructions
-category: _MP-Snippets
+category: Snippets
 instructions: >
-  Add assignment submission instructions for students to your assignments
+  Add assignment submission instructions for students.
 template: |
   <!-- Assignment Activity Instructions -->
   <!-- Success alert -->
@@ -18,4 +18,5 @@ template: |
   <!-- End of success alert -->
   <!-- End of Assignment Activity Instructions -->
 author: Greg Bird <greg.bird.oz@gmail.com>
+scope: ^page-mod-assign-
 version: 1.0.0
