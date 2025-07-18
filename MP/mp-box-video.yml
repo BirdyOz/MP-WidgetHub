@@ -1,18 +1,21 @@
-key: mp-box-video
-name: Video Box
+key: mp-box-video-kaltura
+name: Kaltura Video Box 2 [In development]
 category: UI
-instructions: >
+instructions: |
   Add the details of your video
 template: |
   <!-- Start of Video box -->
-  <div class="card mt-1 mb-1 clearfix w-100">
+  <div class="card mt-1 mb-1 clearfix w-100 mp-video">
       <div class="card-body">
-          <h4 class="text-danger"><i aria-hidden="true" class="fa fa-play-circle-o"></i> {{title}} ({{#if}}[hours<10]0{{/if}}{{hours}}:{{#if}}[minutes<10]0{{/if}}{{minutes}})</h4>
+          <h4 class="text-danger"><i aria-hidden="true" class="fa fa-play-circle-o"></i> <span class="mp-video-title"> {{title}} ({{#if}}[hours<10]0{{/if}}{{hours}}:{{#if}}[minutes<10]0{{/if}}{{minutes}}) </span></h4>
           <p>{{description}}</p>
-          {{{embed}}}
+          <div class="mp-video-embed">{{{embed}}}</div>
       </div>
   </div>
   <!-- End of Video box -->
+selectors: .mp-video .mp-video-embed
+insertquery: .mp-video .mp-video-embed
+unwrap: '*'
 parameters:
   - name: title
     value: '[Title goes here]'
@@ -22,16 +25,17 @@ parameters:
     title: Enter a brief description of the video
     type: textarea
   - name: hours
-    value: 00
+    value: 0
     title: Hours
     min: 0
   - name: minutes
-    value: 00
+    value: 0
     title: Minutes
     min: 0
     max: 59
   - name: embed
     value: '[Video link or embed code goes here]'
     title: Add the video link or embed code here
+autocomplete: embed
 author: Greg Bird <greg.bird.oz@gmail.com>
 version: 1.0.0

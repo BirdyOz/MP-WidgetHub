@@ -1,0 +1,73 @@
+key: mp_bs_accordion
+name: Accordion menu system
+category: bootstrap
+instructions: >
+  Creates an accordion component with multiple collapsible sections. Compatible
+  with both Bootstrap 4 and Bootstrap 5.
+engine: ejs
+template: >
+  <p></p>
+
+  <div class="accordion" id="accordion-<%= ID %>"
+  data-widget="mp_bs_accordion_<%= ID %>">
+    <% for (let i = 0; i < sections; i++) { %>
+      <!-- Accordion Item <%= i+1 %> -->
+      <div class="card accordion-item">
+        <!-- Header - contains both BS4 and BS5 compatible elements -->
+        <div class="card-header accordion-header" id="heading-<%= ID %>-<%= i+1 %>">
+          <h3 class="mb-0">
+            <button class="btn btn-link accordion-button <%= (i === 0 && firstItemOpen) ? '' : 'collapsed' %>" type="button"
+                    data-toggle="collapse" data-bs-toggle="collapse"
+                    data-target="#collapse-<%= ID %>-<%= i+1 %>" data-bs-target="#collapse-<%= ID %>-<%= i+1 %>"
+                    aria-expanded="<%= (i === 0 && firstItemOpen) ? 'true' : 'false' %>" aria-controls="collapse-<%= ID %>-<%= i+1 %>">
+              <%= sectionTitle.replace(/{{n}}/g, i+1) %>
+            </button>
+          </h3>
+        </div>
+
+        <!-- Content panel - works with both BS4 and BS5 -->
+        <div id="collapse-<%= ID %>-<%= i+1 %>" class="collapse accordion-collapse <%= (i === 0 && firstItemOpen) ? 'show' : '' %>"
+             data-parent="#accordion-<%= ID %>" data-bs-parent="#accordion-<%= ID %>"
+             aria-labelledby="heading-<%= ID %>-<%= i+1 %>">
+          <div class="card-body accordion-body">
+            <p><%= sectionContent.replace(/{{n}}/g, i+1) %></p>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+
+  <p></p>
+selectors: div[data-widget^="mp_bs_accordion_"]
+parameters:
+  - name: ID
+    value: $RND
+    title: Unique ID
+    type: textfield
+    hidden: true
+  - name: sections
+    title: Number of Sections
+    value: 3
+    type: numeric
+    min: 1
+    max: 10
+    tooltip: Number of accordion sections to create
+  - name: firstItemOpen
+    title: First Item Open?
+    value: false
+    type: checkbox
+    tooltip: If checked, the first accordion item will be expanded by default
+  - name: sectionTitle
+    title: Placeholder Title
+    value: Section {{n}}
+    tooltip: Use {{n}} as a placeholder for the section number.  You can edit this later
+  - name: sectionContent
+    title: Placeholder Content
+    value: Content for section {{n}}
+    type: textarea
+    tooltip: Use {{n}} as a placeholder for the section number.  You can edit this later
+contextmenu:
+  - predicate: .accordion-item
+    actions: moveup movedown insertafter | remove
+author: Greg Bird <greg.bird.oz@gmail.com>
+version: 1.1.0
